@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lernplaner</title>
+  <meta name="description" content="Klausuren planen, Stoff aufteilen, Lernfortschritt verfolgen.">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Lernplaner">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#/" class="brand" aria-label="Lernplaner – Übersicht">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Lernplaner</span>
+      </a>
+      <nav class="tabs" aria-label="Ansichten">
+        <a href="#/" data-tab="home">Übersicht</a>
+        <a href="#/kalender" data-tab="cal">Kalender</a>
+      </nav>
+      <button id="syncBtn" class="sync" data-action="sync" type="button"></button>
+      <button class="icon-btn" data-action="settings" type="button" aria-label="Einstellungen" title="Einstellungen">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9M15 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM9 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+      </button>
+    </div>
+  </header>
+  <main id="app" class="container"></main>
+  <div id="modal-root"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
