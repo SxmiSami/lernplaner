@@ -5,9 +5,11 @@ Ein Planer für Klausuren: Termine eintragen, Stoff hochladen, Themen nach Schwi
 ## Funktionen
 
 - **Klausuren** mit Fach, Datum, Lernbeginn und Farbe
-- **Stoff** als PDF oder Text hochladen. Aus Überschriften und Nummerierungen werden Themen vorgeschlagen
+- **Stoff** als PDF oder Text hochladen. Themen werden aus der Struktur vorgeschlagen: Lesezeichen, Inhaltsverzeichnis, Folientitel oder Kapitelüberschriften. Kopf- und Fußzeilen, Daten, Dozenten- und Uni-Angaben werden herausgefiltert. Vor dem Übernehmen kannst du die Vorschläge umbenennen, löschen oder ergänzen
+- **KI-Themenerkennung (optional):** Mit einem eigenen Claude-API-Schlüssel (Einstellungen) liest Claude die Unterlage und nennt die 3–10 Hauptthemen. Der Schlüssel bleibt auf dem Gerät, jede Auswertung kostet ein paar Cent
 - **Schwierigkeit 1–5** pro Thema. Daraus ergibt sich der Anteil am Stoff, z. B. 3 von insgesamt 15 Punkten = 20 %
-- **Automatisch verteilen:** Schwere Themen bekommen mehr Tage. Wenn genug Zeit ist, bleibt der letzte Tag als Wiederholungstag frei. Die Lerntage lassen sich danach von Hand ändern
+- **Lernplan nach Spaced Repetition:** Pro Tag kommen ein bis zwei neue Themen dran, das schwierigste zuerst. Bereits gelernte Themen werden mit wachsendem Abstand wiederholt, schwere öfter. Der vorletzte Tag ist für eine Probeklausur, der letzte nur für die schwachen Themen. Jeder Tag ist als **Neu** oder **Wdh.** markiert
+- **Lerntage bearbeiten:** Tag antippen = gelernt, ✕ = Tag entfernen, „Tage wählen“ = Tage hinzufügen oder abwählen
 - **Abhaken:** An jedem Lerntag hakst du ab, ob du das Thema gelernt hast. Erst der Haken „verstanden“ zählt zum Fortschritt
 - **Übersicht** mit der Liste für heute, einem „Nachholen“-Bereich und dem Gesamtfortschritt
 - **Kalender** als Monatsansicht
@@ -55,8 +57,8 @@ Dieser Token kann nur dein Daten-Repo lesen und schreiben, sonst nichts.
 - Jede Änderung wird sofort auf dem Gerät gespeichert und nach etwa 1 Sekunde zu GitHub hochgeladen.
 - Beim Öffnen der Seite und beim Zurückwechseln in den Tab holt der Planer den neuesten Stand.
 - Ohne Internet läuft alles normal weiter. Die Änderungen werden später abgeglichen.
-- Hast du dieselbe Klausur auf zwei Geräten gleichzeitig offline bearbeitet, gewinnt die zuletzt geänderte Version.
-- Oben rechts siehst du den Status: grün = synchronisiert, rot = Fehler (für Details darauf tippen).
+- Hast du auf zwei Geräten gleichzeitig offline gearbeitet, wird pro Thema zusammengeführt: Bei jedem Thema gewinnt die zuletzt geänderte Version, gelöschte Themen und Tage bleiben gelöscht.
+- Oben rechts siehst du den Status: grauer Punkt = nicht verbunden, grüne Wolke mit Haken = synchronisiert, rote Wolke = Fehler (für Details darauf tippen).
 - Backup: **Einstellungen → Exportieren** speichert alles als JSON-Datei.
 
 ## Wenn etwas nicht klappt
